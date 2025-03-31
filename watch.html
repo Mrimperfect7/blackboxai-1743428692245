@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Title - YouTube Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+        }
+        .video-container {
+            aspect-ratio: 16/9;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header (same as index.html) -->
+    <div id="header"></div>
+    
+    <main class="container mx-auto px-4 py-6">
+        <div class="flex flex-col lg:flex-row gap-6">
+            <!-- Main Video Content -->
+            <div class="lg:w-2/3">
+                <div class="video-container bg-black rounded-lg overflow-hidden mb-4">
+                    <video id="main-video" class="w-full h-full" controls>
+                        <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <div class="mb-6">
+                    <h1 class="text-xl font-bold mb-2">How to Build a YouTube Clone with Tailwind CSS</h1>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-gray-300"></div>
+                            <div>
+                                <p class="font-medium">Web Dev Tutorials</p>
+                                <p class="text-gray-600 text-sm">1.2M subscribers</p>
+                            </div>
+                            <button class="bg-black text-white px-4 py-1 rounded-full text-sm font-medium">
+                                Subscribe
+                            </button>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button class="flex items-center space-x-1 bg-gray-100 px-3 py-1 rounded-full">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span>42K</span>
+                            </button>
+                            <button class="flex items-center space-x-1 bg-gray-100 px-3 py-1 rounded-full">
+                                <i class="fas fa-thumbs-down"></i>
+                                <span>Dislike</span>
+                            </button>
+                            <button class="flex items-center space-x-1 bg-gray-100 px-3 py-1 rounded-full">
+                                <i class="fas fa-share"></i>
+                                <span>Share</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-100 p-3 rounded-lg">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <span class="font-medium">1.2M views</span>
+                            <span>•</span>
+                            <span>3 days ago</span>
+                        </div>
+                        <p class="text-sm">Learn how to build a YouTube clone using modern web technologies like Tailwind CSS, JavaScript, and HTML5. This tutorial covers everything from the UI layout to responsive design.</p>
+                    </div>
+                </div>
+                
+                <!-- Comments Section -->
+                <div>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <span class="font-medium">4,231 Comments</span>
+                        <button class="flex items-center space-x-1">
+                            <i class="fas fa-sort"></i>
+                            <span>Sort by</span>
+                        </button>
+                    </div>
+                    
+                    <div class="flex mb-4">
+                        <div class="w-9 h-9 rounded-full bg-gray-300 mr-3"></div>
+                        <input type="text" placeholder="Add a comment..." class="border-b border-gray-300 w-full pb-1 focus:outline-none focus:border-blue-500">
+                    </div>
+                    
+                    <!-- Sample Comments -->
+                    <div class="flex mb-4">
+                        <div class="w-9 h-9 rounded-full bg-gray-300 mr-3"></div>
+                        <div>
+                            <p class="font-medium text-sm">User123</p>
+                            <p class="text-sm mb-1">Great tutorial! Very clear explanations.</p>
+                            <div class="flex items-center space-x-2 text-xs text-gray-600">
+                                <button><i class="fas fa-thumbs-up"></i> 42</button>
+                                <button><i class="fas fa-thumbs-down"></i></button>
+                                <span>REPLY</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="lg:w-1/3 space-y-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <span class="font-medium">Up next</span>
+                        <span class="text-xs bg-gray-100 px-2 py-0.5 rounded">AUTOPLAY</span>
+                    </div>
+                    <button class="text-blue-500 text-sm">AUTOPLAY <i class="fas fa-toggle-on"></i></button>
+                </div>
+                
+                <!-- Recommended Videos -->
+                <div class="flex space-x-2">
+                    <div class="w-40 h-24 bg-gray-200 rounded-lg overflow-hidden">
+                        <img src="https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-medium text-sm line-clamp-2">Learn JavaScript in 1 Hour</h3>
+                        <p class="text-gray-600 text-xs">Code Masters</p>
+                        <p class="text-gray-600 text-xs">856K views • 1 week ago</p>
+                    </div>
+                </div>
+                
+                <!-- More recommended videos would go here -->
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize header
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('header');
+            header.innerHTML = `
+                <header class="sticky top-0 bg-white shadow-sm z-10">
+                    <div class="flex items-center justify-between px-4 py-2">
+                        <div class="flex items-center">
+                            <a href="index.html" class="text-red-600 mr-4">
+                                <i class="fab fa-youtube text-3xl"></i>
+                            </a>
+                            <div class="hidden md:block text-2xl font-semibold">YouTube</div>
+                        </div>
+                        
+                        <div class="flex-1 max-w-2xl mx-4">
+                            <div class="relative">
+                                <input type="text" placeholder="Search" 
+                                    class="w-full border border-gray-300 rounded-l-full py-2 px-4 focus:outline-none focus:border-blue-500">
+                                <button class="absolute right-0 top-0 h-full bg-gray-100 border border-l-0 border-gray-300 rounded-r-full px-5 hover:bg-gray-200">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <button class="p-2 rounded-full hover:bg-gray-100">
+                                <i class="fas fa-video"></i>
+                            </button>
+                            <button class="p-2 rounded-full hover:bg-gray-100">
+                                <i class="fas fa-bell"></i>
+                            </button>
+                            <button class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center">
+                                <i class="fas fa-user"></i>
+                            </button>
+                        </div>
+                    </div>
+                </header>
+            `;
+        });
+    </script>
+</body>
+</html>
